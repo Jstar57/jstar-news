@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasar Kripto Kembali Bergairah - KABAR EMAS</title>
+    <link rel="stylesheet" href="berita.css">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CDN SUPABASE JS (WAJIB ADA UNTUK KONEKSI DATABASE CHAT/KOMENTAR) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="detail-page">
+
+    <!-- Tombol Back ke Index -->
+    <div class="back-container">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Home</a>
+    </div>
+
+    <!-- Konten Utama Artikel -->
+    <main class="article-wrapper">
+        <article class="main-article">
+            <span class="category">EKONOMI / KRIPTO</span>
+            <h1 class="article-title">Pasar Kripto dan Investasi Digital Kembali Bergairah Pekan Ini</h1>
+            <div class="article-date">Diposting pada: 16 Juni 2026</div>
+
+            <!-- Gambar Utama -->
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800" alt="Crypto Market">
+            </div>
+
+            <!-- Isi Paragraf Berita -->
+            <div class="article-content">
+                <p>Pasar aset digital global mengalami lonjakan signifikan dalam beberapa hari terakhir. Investor institusional dilaporkan mulai kembali mengalirkan dana segar ke beberapa aset kripto utama setelah periode stagnasi yang cukup panjang.</p>
+                
+                <p>Para analis memprediksi bahwa adopsi regulasi baru yang lebih bersahabat di berbagai negara menjadi pemicu utama di balik gairahnya sentimen pasar minggu ini.</p>
+
+                <!-- Video YouTube di Tengah Teks dengan Border Emas -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <p>Mskipun demikian, para ahli keuangan tetap menghimbau para investor ritel untuk berhati-hati dan melakukan riset mendalam sebelum menaruh modal, mengingat tingkat volatilitas pasar kripto yang masih tergolong tinggi.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- KOTAK KOMENTAR REAL-TIME DATABASE (SUPABASE) -->
+        <section class="comment-section">
+            <h3><i class="fas fa-comments"></i> Kolom Komentar (Cloud DB)</h3>
+            
+            <!-- Form Input Komentar -->
+            <form id="commentForm" class="comment-form">
+                <input type="text" id="commenterName" placeholder="Masukkan nama kamu..." required>
+                <textarea id="commentText" rows="4" placeholder="Tulis komentar kamu di sini..." required></textarea>
+                <button type="submit" class="btn-submit">Kirim Komentar <i class="fas fa-paper-plane"></i></button>
+            </form>
+
+            <!-- Wadah Loading & Output Komentar Dari Supabase -->
+            <div id="commentsContainer" class="comments-container">
+                <!-- Komentar dari Supabase database akan di-inject ke sini oleh JS -->
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- REKOMENDASI BERITA LAIN -->
+        <section class="related-news">
+            <h3 class="related-heading">Berita Terkait Lainnya</h3>
+            <div class="related-grid">
+                <!-- Link ke Artikel 1 -->
+                <a href="detail-berita-1.html" class="related-card">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="AI">
+                    <h4>Eksplorasi Teknologi AI Generatif di Industri Kreatif</h4>
+                </a>
+                <!-- Link ke Artikel 3 -->
+                <a href="detail-berita-3.html" class="related-card">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300" alt="Lifestyle">
+                    <h4>Panduan Menjaga Keseimbangan Hidup & Kerja Remote</h4>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Memanggil script logika database -->
+    <script src="berita.js"></script>
+</body>
+</html>

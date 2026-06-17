@@ -1,0 +1,325 @@
+/* ===================================================
+   === CSS TAMBAHAN UNTUK HALAMAN DETAIL ARTIKEL ===
+   =================================================== */
+
+.detail-page {
+    background-color: #ffffff; /* Latar belakang halaman tetap putih bersih */
+    color: #111111;
+    padding: 10px 20px;
+}
+
+/* Container Tombol Kembali */
+.back-container {
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+}
+
+.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    color: #111111;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid #111111;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover tombol back berubah jadi hitam dengan teks emas */
+.btn-back:hover {
+    background-color: #111111;
+    color: #d4af37;
+    border-color: #d4af37;
+    transform: translateX(-3px);
+}
+
+/* Pembungkus Artikel Utama */
+.article-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.article-title {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 15px 0;
+    color: #111111;
+}
+
+.article-date {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Gambar Sampul Artikel */
+.article-image {
+    width: 100%;
+    max-height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Paragraf Teks Berita */
+.article-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* === BINGKAI / BORDER EMAS VIDEO YOUTUBE === */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio aspek video 16:9 */
+    height: 0;
+    overflow: hidden;
+    border: 4px solid #d4af37; /* Border Emas Tebal & Mewah */
+    border-radius: 20px;       /* Desain melengkung gelembung */
+    margin: 35px 0;
+    background-color: #111111;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Garis Pembatas Antar Seksi */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 50px 0;
+}
+
+/* === SEKSI KOTAK KOMENTAR (HITAM - EMAS) === */
+.comment-section {
+    background-color: #111111; /* Latar Belakang Kotak Hitam */
+    color: #ffffff;
+    padding: 35px;
+    border-radius: 24px;       /* Melengkung bulat/gelembung */
+    border: 2px solid #d4af37; /* Aksen Border Emas */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.comment-section h3 {
+    font-size: 22px;
+    color: #d4af37; /* Heading teks emas */
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* Struktur Form */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.comment-form input, 
+.comment-form textarea {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    padding: 15px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.comment-form input:focus, 
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #d4af37; /* Efek menyala emas saat kolom diklik */
+}
+
+/* Tombol Kirim Komentar */
+.btn-submit {
+    background-color: #d4af37; /* Warna emas */
+    color: #111111;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #ffffff; /* Berubah putih saat di-hover */
+    color: #111111;
+    transform: translateY(-2px);
+}
+
+/* Daftar Output Box Komentar */
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto; /* Jika komentar terlalu banyak, akan bisa di-scroll ke bawah */
+    padding-right: 5px;
+}
+
+.comment-box {
+    background-color: #1a1a1a;
+    padding: 18px;
+    border-left: 4px solid #d4af37; /* Garis aksen emas di sebelah kiri */
+    border-radius: 8px;
+}
+
+.comment-box h5 {
+    color: #d4af37;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.comment-box p {
+    font-size: 14px;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+/* === BERITA TERKAIT DI BAGIAN BAWAH === */
+.related-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi 2 kolom berita */
+    gap: 25px;
+}
+
+.related-card {
+    text-decoration: none;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.3s ease;
+}
+
+.related-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.related-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-4px);
+}
+
+.related-card:hover h4 {
+    color: #d4af37; /* Judul berita terkait berubah emas saat disorot */
+}
+
+/* =======================================
+   === MEDIA QUERIES (RESPONSIF HP) ======
+   ======================================= */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 26px;
+    }
+    
+    .article-content p {
+        font-size: 16px;
+    }
+
+    .comment-section {
+        padding: 20px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr; /* Di layar HP berita terkait otomatis berbaris 1 kolom */
+        gap: 20px;
+    }
+}
+/* === REVISI DETAIL PAGE (PASTIKAN WARNA EMAS MASUK) === */
+
+.detail-page {
+    background-color: #ffffff;
+    color: #111111;
+    padding: 0; /* Reset padding body */
+}
+
+/* Pembungkus Artikel Utama - Kasih padding biar gak nempel ke pinggir layar */
+.article-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px; /* Biar rapi ada jarak di kiri kanan */
+}
+
+/* Container Tombol Kembali */
+.back-container {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+/* TOMBOL KEMBALI KITA SULAP JADI HITAM-EMAS BULAT KANAN KIRI */
+.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #111111; /* Dasar Hitam */
+    color: #ffffff;            /* Teks Putih */
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid #d4af37; /* BORDER EMAS SANGAR */
+    padding: 12px 28px;        /* Atas-bawah, Kanan-kiri biar lonjong */
+    border-radius: 30px;       /* Bikin bunder melengkung sempurna */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Efek pas kursor nempel ke tombol back */
+.btn-back:hover {
+    background-color: #d4af37; /* Berubah jadi emas full */
+    color: #111111;            /* Teks jadi hitam */
+    transform: translateY(-2px); /* Nge-flex naik dikit */
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Tambahan hiasan kategori biar ada sentuhan emas di atas judul */
+.main-article .category {
+    color: #d4af37;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
