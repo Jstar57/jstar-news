@@ -1,5 +1,5 @@
-const SUPABASE_URL = "https://ISI_DENGAN_URL_PROJECT_LU.supabase.co";
-const SUPABASE_KEY = "ISI_DENGAN_ANON_KEY_LU";
+const SUPABASE_URL = "https:ukfzmjrodkmlhwnafvei.supabase.co";
+const SUPABASE_KEY = "sb_publishable_z9pfUbcmaAU4j0_esfy2lw_8P8CCFMr";
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 document.addEventListener("DOMContentLoaded", function() {
