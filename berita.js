@@ -1,8 +1,6 @@
-// ISI DENGAN DATA DARI SUPABASE LU
 const SUPABASE_URL = "https://ukfzmjrodkmlhwnafvei.supabase.co";
 const SUPABASE_KEY = "sb_publishable_z9pfUbcmaAU4j0_esfy2lw_8P8CCFMr"; // Pastikan key publishable lu bener
 
-// FIX: Pakai window.supabase agar JavaScript tidak crash/error pas loading script
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -11,12 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const commentText = document.getElementById("commentText");
     const commentsContainer = document.getElementById("commentsContainer");
 
-    // Ambil ID Berita otomatis dari nama file (misal: "berita1")
     const path = window.location.pathname;
     const page = path.substring(path.lastIndexOf('/') + 1);
     const idBerita = page.replace(".html", "") || "berita_utama";
 
-    // 1. FUNGSI AMBIL KOMENTAR DARI DATABASE
+    // 1. AMBIL KOMENTAR
     async function loadComments() {
         if (!commentsContainer) return;
         commentsContainer.innerHTML = "<p style='color: #888; font-size: 14px;'>Memuat komentar...</p>";
@@ -44,25 +41,26 @@ document.addEventListener("DOMContentLoaded", function() {
             const box = document.createElement("div");
             box.classList.add("comment-box");
             box.style.marginTop = "15px";
-            box.innerHTML = `<h5>${comment.name}</h5><p>${comment.text}</p>`;
+            // FIX: Mengubah comment.text menjadi comment.comments sesuai kolom database lu!
+            box.innerHTML = `<h5>${comment.name}</h5><p>${comment.comments}</p>`;
             commentsContainer.appendChild(box);
         });
     }
 
-    // 2. FUNGSI KIRIM KOMENTAR BARU
+    // 2. KIRIM KOMENTAR
     if (commentForm) {
         commentForm.addEventListener("submit", async function(event) {
-            event.preventDefault(); // SEKARANG INI PASTI JALAN MENAHAN REFRESH!
+            event.preventDefault(); 
 
             const nameInput = commenterName.value.trim();
             const textInput = commentText.value.trim();
 
             if (!nameInput || !textInput) return;
 
-            // Kirim ke tabel 'comments'
+            // FIX: Mengubah key 'text' menjadi 'comments' agar sinkron dengan database lu!
             const { error } = await supabaseClient
                 .from('comments')
-                .insert([{ name: nameInput, text: textInput, berita_id: idBerita }]);
+                .insert([{ name: nameInput, comments: textInput, berita_id: idBerita }]);
 
             if (error) {
                 alert("Gagal mengirim komentar ke database! Log: " + error.message);
@@ -70,11 +68,10 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 commenterName.value = "";
                 commentText.value = "";
-                loadComments(); // Ambil ulang data biar langsung nongol tanpa refresh!
+                loadComments(); 
             }
         });
     }
 
-    // Jalankan pertama kali pas page kebuka
     loadComments();
 });
