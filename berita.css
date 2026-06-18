@@ -323,3 +323,35 @@
     display: inline-block;
     margin-bottom: 10px;
 }
+/* Kotak pembungkus semua komentar */
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px; /* Kasih jarak dari tombol kirim */
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Tampilan tiap kotak komentar individu di dalam container */
+.comment-box {
+    background-color: #1a1a1a; /* Background box abu gelap agar kontras */
+    padding: 18px;
+    border-left: 4px solid #d4af37; /* Garis vertikal emas di sebelah kiri */
+    border-radius: 8px;
+    text-align: left; /* Biar teks rata kiri rapi */
+}
+
+.comment-box h5 {
+    color: #d4af37; /* Nama komentator warna emas */
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+}
+
+.comment-box p {
+    font-size: 14px;
+    color: #e0e0e0; /* Isi teks komentar warna putih abu */
+    line-height: 1.5;
+    margin: 0;
+}
